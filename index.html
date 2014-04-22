@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>Clone Git Test</title>
+<!-- 加载 jQuery -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+	var ajaxServer = function (query_data) {
+		$.ajax({
+			type : "GET",
+			url : "http://localhost:3000/q",
+			data : "loc=" + query_data,
+			success : function (result) {
+				// TODO: 打印状态
+				$("#msg").text(result);
+			}
+		});
+	};
+
+	var main = function () {
+		// 绑定enter键按下事件
+		$("#repo").bind("keydown", function (e) {
+			var key = e.which;
+			if (key == 13) {
+				ajaxServer($("#repo").val());
+			}
+		});
+	};
+
+	main();
+});
+</script>
+</head>
+<body>
+<div>
+<input type="text" id="repo" placeholder="repository url..."  size="100" />
+</div>
+<div>&nbsp;</div><div>&nbsp;</div>
+<div style="display:inline" id="msg" font=""></div>
+</body>
+</html>

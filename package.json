@@ -1,0 +1,14 @@
+{
+  "name": "task2",
+  "version": "0.0.1",
+  "description": "web app for git clone tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dennis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.0.0"
+  }
+}
